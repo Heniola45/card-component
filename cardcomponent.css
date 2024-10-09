@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", system-ui;
+}
+
+:root {
+    /* COLOR VARIABLES */
+    --backgroundColor: #f8f8f8;
+    --bigTextColor: #2e223d;
+    --outlineColor: #cac4c4;
+    --smallTextColor: #333333;
+    --buttonColor: #070707;
+    --buttonTextColor: white;
+    --hoverButtonColor: #230B42;
+
+    /* TEXT VARIABLES */
+    --headerTextSize: 3.25rem;
+    --bodyTextSize: 1rem;
+    --buttonTextSize: 1.1rem;
+    --buttonSmallestTextSize: 0.95rem;
+
+    /* SPACE VARIABLES */
+    --columnGapSpace: 0.75rem;
+    --smallColumnGapSpace: 0.25rem;
+    --rowGapSpace: 3rem;
+    --smallRowGapSpace: 0.75rem;
+    --padding: 4rem;
+    --smallerPadding: 2rem;
+    --smallPadding: 1rem;
+    --smallestPadding: 0.75rem; 
+
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* COLOR VARIABLES */
+        --backgroundColor: #230B42;
+        --bigTextColor: #fcfcfc;
+        --outlineColor: #cac4c4;
+        --smallTextColor: #f1eded;
+        --buttonColor: white;
+        --buttonTextColor: #070707;
+        --hoverButtonColor: #b7a7ca;
+    }
+}
+
+
+
+/* Media Query for screens less than 825px */
+@media screen and (max-width: 825px) {
+    .card-container {
+        width: 85%; 
+        height: auto;
+        margin: 2rem auto; 
+        padding: var(--smallPadding); 
+    }
+
+    .price-month-sub h1 {
+        font-size: 2.5rem; 
+    }
+
+    .price-month-sub p {
+        font-size: 1rem; 
+    }
+
+    .description-text p {
+        font-size: 0.95rem; 
+    }
+
+    .finger-print {
+        padding: 0.75rem; 
+    }
+
+    button {
+        font-size: var(--buttonSmallestTextSize);
+        padding: var(--smallestPadding);
+    }
+
+}
+
+/* Additional Media Query for screens less than 768px */
+@media screen and (max-width: 768px) {
+    .card-container {
+        width: 90%; 
+        margin: 2rem auto;
+        padding: var(--smallPadding);
+    }
+
+    .price-month-sub h1 {
+        font-size: 2rem;
+    }
+
+    .price-month-sub p {
+        font-size: 0.9rem;
+    }
+
+    .description-text p {
+        font-size: 0.9rem;
+    }
+
+    .finger-print {
+        padding: 0.5rem;
+    }
+
+    button {
+        
+        padding: var(--buttonSmallestTextSize);
+    }
+}
+
+/* Media Query for screens less than 480px */
+@media screen and (max-width: 480px) {
+    .card-container {
+        width: 100%;
+    }
+
+    .price-month-sub h1 {
+        font-size: 1.8rem;
+    }
+
+    .description-text p {
+        font-size: 0.85rem;
+    }
+
+    .finger-print {
+        padding: 0.4rem;
+    }
+
+    button {
+        
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+.card-container {
+    width: 30%;
+    height: auto;
+    background-color: var(--backgroundColor);
+    padding: var(--smallerPadding);
+    border-radius: 0.75rem;
+    border: 1px solid var(--outlineColor);
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: var(--rowGapSpace);
+}
+
+.card-top-section {
+    justify-content: start;
+    align-items: start;
+}
+
+.platium {
+    width: fit-content;
+    height: auto;
+}
+
+.platinum p {
+    font-size:var(--bodyTextSize);
+    font-weight: 600;
+    color: var(--smallTextColor);
+    animation: platinum 2s ease-in-out;
+  
+}
+
+@keyframes platinum {
+    from {
+        transform: translateY(0.5rem);
+        color: #8a68b7;
+        font-size: 1.1rem;
+    }
+
+    to {
+        transform: translateX(0);
+        color: black;
+        font-size: 2rem;
+
+    }
+}
+
+.price-month-sub {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: baseline;
+    column-gap: var(--smallColumnGapSpace);
+}
+
+.price-month-sub h1 {
+    font-size: var(--headerTextSize);
+    font-weight: 400;
+    color: var(--bigTextColor);
+}
+
+.price-month-sub p {
+    font-size: var(--bodyTextSize);
+    font-weight: 400;
+    color: var(--smallTextColor);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), -2px -2px 3px var(--bigTextColor);
+}
+
+.description-text {
+    width: 100%;
+    height: auto;
+    font-size: var(--bodyTextSize);
+    color: var(--smallTextColor);
+    font-weight: 300;
+
+}
+ .description-text p {
+    font-size: var(--bodyTextSize);
+    font-weight: 200;
+    color: var(--smallTextColor);
+ }
+
+.card-bottom-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: var(--smallRowGapSpace);
+}
+
+.background-image {
+    width: 100%;
+    height: auto;
+    background-image: url("./Images/worker-reading-news-with-tablet.jpg");
+    padding: var(--padding);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.75rem;
+
+}
+
+.button-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    column-gap: var(--columnGapSpace);
+}
+
+.finger-print {
+    width: fit-content;
+    height: auto;
+    background-color:var(--buttonColor);
+    padding: var(--smallPadding);
+    border: none;
+    border-radius: 0.75rem;
+    color: var(--buttonTextColor);
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.finger-print:hover {
+    background-color:var(--hoverButtonColor);
+ }
+
+button {
+    width: 100%;
+    height: auto;
+    background-color: var(--buttonColor);
+    color: var(--buttonTextColor);
+    
+    border: none;
+    outline: none;
+    padding: var(--smallPadding);
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+    
+}
+
+button:hover {
+   background-color:var(--hoverButtonColor);
+   transform: translateX(0.25rem); 
+}
